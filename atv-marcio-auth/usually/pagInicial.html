@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Tela de entrada</h1>
+    <h3>Obtenha sua chave de acesso!</h3>
+    <button class="btn" onclick="useFire()">Obter token</button>
+    <div class="token"></div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="index.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBHteCh5RFy6I_IH9pRi0UfP2vytNzRnP0",
+    authDomain: "atividade-fire.firebaseapp.com",
+    projectId: "atividade-fire",
+    storageBucket: "atividade-fire.appspot.com",
+    messagingSenderId: "610105058674",
+    appId: "1:610105058674:web:f8382835ca4de75a5b69eb"
+    };
+
+   function useFire() {
+    firebase.initializeApp(firebaseConfig);
+
+    // Verificar se o usuário está logado
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    const tokenDiv = document.querySelector('.token');
+   
+    // Obter o token de autenticação
+    user.getIdToken().then(token => tokenDiv.innerHTML = token);
+    
+}
+});
+   }
+  
+</script>

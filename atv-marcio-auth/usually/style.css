@@ -1,0 +1,39 @@
+body{
+    background-color: #21203f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: large;
+}
+
+input,button{
+    padding: 10px;
+    margin-bottom:10px;
+    width: -webkit-fill-available;
+}
+
+button{
+    cursor: pointer;
+    background-color: #2a294b;
+    color: white;
+}
+
+input{
+    border-color: rgb(187, 187, 187);
+
+}
+
+button:active{
+    background-color: #131324;
+}
+
+.formulario{
+    width: 300px;
+    background-color: white;
+    padding: 5vh;
+}
+
+.formulario,input{
+    border-radius: 5px;
+}
